@@ -25,6 +25,7 @@ class Home extends Component {
   }
 
   async componentDidMount() {
+    //this.props.callbreweryProducts();
     //Have a try and catch block for catching errors.
     try {
       //Assign the promise unresolved first then get the data using the json method.
@@ -59,6 +60,8 @@ class Home extends Component {
   render() {
     //Destruct breweryList and Loading from state.
     const {breweryList, loading} = this.state;
+    const {products} = this.props;
+    console.log(products);
     //const {breweries} = this.props;
     //If laoding to false, return a FlatList which will have data, rednerItem, and keyExtractor props used.
     //Data contains the data being  mapped over.
@@ -98,21 +101,25 @@ const styles = StyleSheet.create({
   },
   breweryItemHeader: {
     color: '#581845',
-    fontSize: 24,
+    fontSize: 16,
   },
 });
 
-const mapStateToProps = state => ({});
-// const mapDispatchToProps = dispatch => ({
-//   callbreweryProducts: () => dispatch(fetchProducts()),
-// });
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      // callbreweryProducts: fetchProducts,
-    },
-    dispatch,
-  );
+const mapStateToProps = state => ({
+  app: state.app.products,
+});
+const mapDispatchToProps = dispatch => ({
+  callbreweryProducts: () => dispatch(fetchProducts()),
+});
+
+// const mapDispatchToProps = dispatch =>
+//   bindActionCreators(
+//     {
+//       // callbreweryProducts: fetchProducts,
+//     },
+//     dispatch,
+//   );
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps,

@@ -77,7 +77,9 @@ class ListDetails extends Component {
         <View style={styles.body}>
           <View style={styles.bodyContent}>
             <Text style={styles.name}>Name: {this.state.name}</Text>
-            <Text style={styles.name}>Brewery Type: {this.state.brewery_type}</Text>
+            <Text style={styles.name}>
+              Brewery Type: {this.state.brewery_type}
+            </Text>
             <Text style={styles.name}>Street: {this.state.street}</Text>
             <Text style={styles.name}>City: {this.state.city}</Text>
             <Text style={styles.name}>State: {this.state.state}</Text>
