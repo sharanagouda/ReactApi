@@ -17,7 +17,7 @@ export function fetchProductsSuccess(products) {
   console.log("hi ",products);
   return {
     type: FETCH_PRODUCTS_SUCCESS,
-    products: products,
+    payload: products,
   };
 }
 
@@ -37,7 +37,7 @@ export function fetchSelectedProductDetailsPending() {
 export function fetchSelectedProductDetailsSuccess(data) {
   return {
     type: FETCH_SELECTED_PROCUTDETAILS_SUCCESS,
-    products: data,
+    payload: data,
   };
 }
 
